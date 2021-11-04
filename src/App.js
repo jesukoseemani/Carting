@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Items from './Items';
 import { Badge } from '@material-ui/core';
 import { ShoppingCartOutlined } from '@material-ui/icons';
+import Grid from '@material-ui/core/Grid';
 import { useSelector } from 'react-redux';
 import GlobalStyles from './GlobalState';
 function App() {
@@ -81,18 +82,19 @@ function App() {
 				</Badge>
 			</MenuItem>
 
-			<Wrapper>
+			<Grid container>
 				{product.map((data) => (
-					<Items
-						key={data.id}
-						id={data.id}
-						title={data.title}
-						amount={data.amount}
-						image={data.image}
-						items={data}
-					/>
+					<Grid item xs={12} sm={6} md={4} key={data.id}>
+						<Items
+							id={data.id}
+							title={data.title}
+							amount={data.amount}
+							image={data.image}
+							items={data}
+						/>
+					</Grid>
 				))}
-			</Wrapper>
+			</Grid>
 		</Wrap>
 	);
 }
