@@ -31,8 +31,7 @@ function Items(props: productData) {
 		}
 	};
 
-	const handleClick = (e: any) => {
-		e.preventDefault();
+	const handleClick = () => {
 		dispatch(addProduct({ ...props.items, quantity }));
 	};
 
