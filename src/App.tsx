@@ -6,6 +6,7 @@ import { ShoppingCartOutlined } from '@material-ui/icons';
 import Grid from '@material-ui/core/Grid';
 import { useSelector } from 'react-redux';
 import GlobalStyles from './GlobalState';
+import type { RootState } from './redux/store';
 
 const data = [
 	{
@@ -70,7 +71,7 @@ const data = [
 	},
 ];
 function App() {
-	const { quantity } = useSelector((state: any) => state.products);
+	const { quantity } = useSelector((state: RootState) => state.products);
 
 	const [product, setProduct] = useState(data);
 
